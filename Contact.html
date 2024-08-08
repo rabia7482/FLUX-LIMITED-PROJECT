@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <title>Flux Limited</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">Flux Limited</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="About.html">ABOUT</a></li>
+                    <li><a href="Services.html">SERVICES</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <form method="post" action="your_form_action_url" onsubmit="return validateForm()">
+                    <div class="txtb">
+                        <label for="name">Full Name :</label>
+                        <input type="text" id="name" name="name" placeholder="Enter Your Name">
+                    </div>
+                    <div class="txtb">
+                        <label for="email">Email :</label>
+                        <input type="email" id="email" name="email" placeholder="Enter Your Email">
+                    </div>
+                    <div class="txtb">
+                        <label for="number">Phone Number :</label>
+                        <input type="tel" id="number" name="number" placeholder="Enter Your Phone Number">
+                    </div>
+                    <div class="txtb">
+                        <label for="message">Message :</label>
+                        <textarea id="message" name="message" placeholder="Type Your Message"></textarea>
+                    </div>
+                    <input type="submit" value="Send" class="btn">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var number = document.getElementById("number").value;
+
+            var errors = [];
+            if (name == "") {
+                errors.push("Please enter your name.");
+            }
+            if (email == "") {
+                errors.push("Please enter your email.");
+            }
+            if (number == "") {
+                errors.push("Please enter your number.");
+            }
+
+            if (errors.length == 0) {
+                alert('Hi, welcome to Flux Limited. Input your message below.');
+                return true;
+            } else {
+                alert(errors.join('\n'));
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
